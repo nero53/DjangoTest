@@ -23,6 +23,8 @@ urlpatterns = [
     path('',home, name="home"),
     path('admin/', admin.site.urls),
     path('Templates/', learningTemplates, name='Templates'),
-    path('AddRecipe', addRecipe, name="addRecipe")
+    path('addRecipe/', addRecipe, name="addRecipe")
+
+
 ]
 
