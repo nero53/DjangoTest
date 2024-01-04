@@ -5,3 +5,10 @@ from django.http import HttpResponse
 
 def home(request):
     return HttpResponse('Hello')
+
+
+def sucessPage(request):
+    return HttpResponse("This is the Sucess page")
+
+def learningTemplates(request):
+    return render(request, 'index.html')
