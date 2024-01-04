@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>displayData</title>
+    <style>
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+          padding-top: 10px;
+            padding-bottom: 20px;
+            padding-left: 30px;
+            padding-right: 40px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Data:</h1>
+
+    <table>
+        <tr>
+          <th>SN.</th>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+        {%for student in students%}
+        <tr>
+            <th>{{forloop.counter}}.</th>
+            <th>{{student.name}}</th>
+            <th>{{student.age}}</th>
+          </tr>
+        {%endfor%}
+      </table>
+</body>
+</html>
