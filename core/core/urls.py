@@ -17,11 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from home.views import *
-
+from recipe.views import *
 urlpatterns = [
     path('dataPage/', dataPage, name="dataPage"),
     path('',home, name="home"),
     path('admin/', admin.site.urls),
-    path('Templates/', learningTemplates, name='Templates')
+    path('Templates/', learningTemplates, name='Templates'),
+    path('AddRecipe', addRecipe, name="addRecipe")
 ]
 
