@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 # Create your views here.
 
@@ -15,4 +15,16 @@ def addRecipe(request):
             recipe_desc = recipe_desc,
             recipe_image = recipe_image
         )
-    return render(request, 'add_recipe.html')
+
+        return redirect('/addRecipe/')
+
+    queryset = Recipe.objects.all()
+    context = {'addRecipe' : queryset}
+
+    return render(request, 'add_recipe.html', context)
+
+
+def deleteRecipe(request, id):
+    queryset = Recipe.objects.get(id = id)
+    queryset.delete()
+    return redirect('/addRecipe/')
